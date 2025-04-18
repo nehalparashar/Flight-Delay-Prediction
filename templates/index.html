@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Delay Prediction</title>
+    
+    <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Flight Delay Prediction</h1>
+        <form method="POST" action="/predict">
+            <label for="departure_delay">Departure Delay:</label>
+            <input type="text" name="departure_delay" required><br>
+
+            <label for="airline">Airline:</label>
+            <select name="airline" required>
+                <option value="American Airlines">American Airlines</option>
+                <option value="Delta Airlines">Delta Airlines</option>
+                <option value="United Airlines">United Airlines</option>
+                
+            </select><br>
+
+            <label for="origin">Origin Airport:</label>
+            <select name="origin" required>
+                <option value="JFK">JFK</option>
+                <option value="LAX">LAX</option>
+                <option value="ORD">ORD</option>
+                
+            </select><br>
+
+            <label for="destination">Destination Airport:</label>
+            <select name="destination" required>
+                <option value="JFK">JFK</option>
+                <option value="LAX">LAX</option>
+                <option value="ORD">ORD</option>
+                
+            </select><br>
+
+            <label for="scheduled_departure">Scheduled Departure:</label>
+            <input type="text" name="scheduled_departure" required><br>
+
+            <label for="taxi_out">Taxi Out:</label>
+            <input type="text" name="taxi_out" required><br>
+
+            <button type="submit">Predict Delay</button>
+        </form>
+    </div>
+</body>
+</html>

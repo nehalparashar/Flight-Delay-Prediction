@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #e0f7fa, #e1f5fe);
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .result-container {
+            background-color: #ffffff;
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+            width: 420px;
+            text-align: center;
+            animation: slideUp 1s ease-out forwards;
+            opacity: 0;
+        }
+
+        @keyframes slideUp {
+            0% {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        h2 {
+            color: #3a86ff;
+            font-size: 26px;
+            margin-bottom: 20px;
+        }
+
+        .result-value {
+            font-size: 22px;
+            color: #444;
+            margin-bottom: 30px;
+        }
+
+        .back-button {
+            padding: 12px 24px;
+            background-color: #3a86ff;
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            transition: all 0.4s ease;
+            box-shadow: 0 0 0 rgba(0,0,0,0);
+        }
+
+        .back-button:hover {
+            background-color: #265df2;
+            box-shadow: 0 0 12px #3a86ff;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="result-container">
+        <h2>Flight Delay Prediction</h2>
+        <div class="result-value">
+            ✈️ Predicted Arrival Delay: <strong>{{ prediction }} minutes</strong>
+        </div>
+        <a href="/" class="back-button">🔁 Predict Again</a>
+    </div>
+</body>
+</html>
+
